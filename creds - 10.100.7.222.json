@@ -1,0 +1,45 @@
+{
+  "credentials": {
+    "peers": [
+      {
+        "discovery_host": "10.100.7.222",    //replace with your hostname or ip of a peer
+        "discovery_port": 7051,                //replace with your grpc port (omit if using tls)
+        "api_host": "10.100.7.222",          //replace with your hostname or ip of a peer
+        "api_port_tls": 7051,                  //replace with your grpc port (omit if NOT using tls)
+        "api_port": 7051,                      //replace with your grpc port (omit if using tls)
+        "type": "peer",
+        "id": "vp0"                            //unique name to identify peer (anything you want)
+      }
+    ],
+    "ca": {
+      "sub-ca": {
+        "url": "10.100.7.222:7054",          //replace with your hostname or ip of ca with the port
+        "discovery_host": "10.100.7.222",    //replace with your hostname or ip of can
+        "discovery_port": 7054,                //replace with your grpc port (omit if using tls)
+        "api_host": "10.100.7.222",          //replace with your hostname or ip of ca
+        "api_port_tls": 7054,                  //replace with your grpc port (omit if NOT using tls)
+        "api_port": 7054,
+        "type": "ca",
+        "newUsersObj": [
+          {
+            "enrollId": "WebAppAdmin",         //Registrar
+            "enrollSecret": "DJY27pEnl16d",    //Registrar secret
+            "group": "1",                      //Registrar group
+            "affiliation": "institution_a",    //Registrar affiliation
+            "username": "WebAppAdmin",         //Registrar username
+            "secret": "DJY27pEnl16d"           //Registrar secret
+          }
+        ]
+      }
+    },
+    "users": [
+      {
+        "username": "WebAppAdmin",
+        "secret": "DJY27pEnl16d",
+        "enrollId": "WebAppAdmin",
+        "enrollSecret": "DJY27pEnl16d"
+      }
+    ],
+    "cert": "https://blockchain-certs.mybluemix.net/us.blockchain.ibm.com.cert"
+  }
+}
